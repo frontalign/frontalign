@@ -1,0 +1,63 @@
+{
+  "name": "frontalign",
+  "version": "1.0.1",
+  "description": "Modern front-end framework. Lightweight, powerful, no chaos.",
+  "author": "Eyruz Badalzada",
+  "license": "MIT",
+  "homepage": "https://www.frontalign.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frontalign/frontalign.git"
+  },
+  "bin": {
+    "frontalign": "bin/fa-cli.js"
+  },
+  "keywords": [
+    "css-framework",
+    "ui-components",
+    "frontend-framework",
+    "bootstrap-alternative",
+    "tailwind-alternative"
+  ],
+  "type": "module",
+  "types": "./index.d.ts",
+  "main": "./dist/js/frontalign.esm.js",
+  "module": "./dist/js/frontalign.esm.js",
+  "browser": "./dist/js/frontalign.min.js",
+  "style": "./dist/css/frontalign.min.css",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./dist/js/frontalign.esm.js"
+    },
+    "./react": {
+      "types": "./react/index.d.ts",
+      "import": "./dist/js/frontalign-react.esm.js"
+    },
+    "./css": "./dist/css/frontalign.min.css"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "files": [
+    "dist/js/frontalign.esm.js",
+    "dist/js/frontalign.min.js",
+    "dist/js/frontalign-react.esm.js",
+    "dist/css/frontalign.css",
+    "dist/css/frontalign.min.css",
+    "bin/fa-cli.js",
+    "lib/",
+    "index.d.ts",
+    "react/index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ]
+}
