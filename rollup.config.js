@@ -36,7 +36,7 @@ export default [
     input: "src/react/index.js",
     external: ["react"],
     output: {
-      file: "dist/js/frontalign-react.esm.js",
+      file: "dist/react/frontalign-react.esm.js",
       format: "es",
       sourcemap: true,
     },

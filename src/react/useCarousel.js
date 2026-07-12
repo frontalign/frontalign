@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import Carousel from "../js/components/Carousel.js";
 /*!
- * FrontAlign v1.0.0
+ * FrontAlign v1.0.2
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev

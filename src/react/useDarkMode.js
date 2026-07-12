@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import DarkMode from "../js/components/DarkMode.js";
 /*!
- * FrontAlign v1.0.0
+ * FrontAlign v1.0.2
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev

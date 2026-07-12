@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Select from "../js/components/Select.js";
 /*!
- * FrontAlign v1.0.0
+ * FrontAlign v1.0.2
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
