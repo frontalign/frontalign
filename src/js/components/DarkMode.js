@@ -1,14 +1,8 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
- */
-
-/**
- * Dark mode manager with:
- * persistent theme storage,
- * auto system sync and custom toggles.
  */
 
 export default class DarkMode {
@@ -39,7 +33,8 @@ export default class DarkMode {
       autoCreateBtn: true,
     };
     this.#config = { ...defaults, ...options };
-    this.#container = document.querySelector(this.#config.container) || document.body;
+    this.#container =
+      document.querySelector(this.#config.container) || document.body;
     this.#init();
   }
 

@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
+
 import { spawnSync } from "child_process";
 import { existsSync } from "fs";
 import path from "path";

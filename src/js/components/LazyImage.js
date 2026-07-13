@@ -1,14 +1,11 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
+
 export default class LazyImage {
-  /**
-   * Lazily loads an image using data-src
-   * and applies shimmer/error fallback states.
-   */
   static load(img) {
     if (!img.dataset.src) return;
 

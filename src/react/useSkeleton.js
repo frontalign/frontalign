@@ -1,38 +1,13 @@
-import { useEffect, useRef, useCallback } from "react";
-import Skeleton from "../js/components/Skeleton.js";
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
-/**
- * useSkeleton
- * Binds Skeleton to a ref element.
- * Exposes show(), hide(), error(), wrap() for full lifecycle control.
- * Skeleton.mount() is NOT called — React manages the DOM.
- *
- * @returns {{ ref, show, hide, error, wrap }}
- *
- * @example — manual show/hide
- * const { ref, show, hide } = useSkeleton();
- * <div ref={ref} data-skeleton-layout="card">...</div>
- *
- * @example — wrap (async, auto show → hide → error)
- * const { ref, wrap } = useSkeleton();
- * useEffect(() => {
- *     wrap(() => fetchPosts(), {
- *         message: 'Məlumat yüklənmədi',
- *         retry: true,
- *         onRetry: () => wrap(() => fetchPosts())
- *     });
- * }, []);
- * <div ref={ref} data-skeleton-layout="list">...</div>
- *
- * @example — error state
- * const { ref, show, error } = useSkeleton();
- * <div ref={ref}>...</div>
- */
+
+import { useEffect, useRef, useCallback } from "react";
+import Skeleton from "../js/components/Skeleton.js";
+
 export function useSkeleton() {
   const ref = useRef(null);
 

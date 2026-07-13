@@ -1,25 +1,13 @@
-import { useEffect, useRef } from "react";
-import Components from "../js/core/Component.js";
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
-/**
- * useTabview
- * Initializes tabview behavior on the returned ref.
- * Handles tab switching, animated underline and ResizeObserver cleanup.
- *
- * @returns {React.RefObject<HTMLElement>} — attach to the tab container element
- *
- * @example
- * const tabRef = useTabview();
- *
- * <div fa-component="tabview" ref={tabRef}>
- *   ...
- * </div>
- */
+
+import { useEffect, useRef } from "react";
+import Components from "../js/core/Component.js";
+
 export function useTabview() {
   const ref = useRef(null);
 

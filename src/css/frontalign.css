@@ -1,6 +1,6 @@
 @charset "utf-8";
-/*!
- * FrontAlign v1.0.2
+/*! 
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -128,7 +128,7 @@
     --danger-contrast: var(--white);
     --success: var(--green-500);
     --success-contrast: var(--white);
-    --warning: var(--yellow-500);
+    --warning: var(--yellow-400);
     --warning-contrast: var(--dark);
     --info: var(--teal-600);
     --info-contrast: var(--white);
@@ -332,7 +332,7 @@
   /* Dark mode */
   [fa-theme="dark"] {
     --primary: var(--blue-300);
-    --primary-contrast: var(--light);
+    --primary-contrast: var(--dark);
     --danger: var(--red-300);
     --danger-contrast: var(--dark);
     --success: var(--green-400);
@@ -344,7 +344,7 @@
     --accent: oklch(
       from var(--primary) min(calc(l + 0.06), 0.9) calc(c * 0.85) h
     );
-    --accent-contrast: var(--light);
+    --accent-contrast: var(--dark);
     --link-hover: oklch(from var(--primary) calc(l + 0.06) calc(c - 0.02) h);
     --link-focus-ring: oklch(from var(--primary) 0.82 0.14 h / 0.25);
     --selection: oklch(from var(--primary) 0.62 calc(c * 0.9) h / 0.38);
@@ -4382,8 +4382,8 @@
     --drawer-width: 420px;
     width: min(80vw, var(--drawer-width));
     height: 100%;
-    background-color: oklch(100% 0 0);
-    color: oklch(15% 0 0);
+    background-color: var(--surface-raised);
+    color: var(--body-text);
     overflow: hidden;
     transform: translate3d(-100%, 0, 0);
     transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -4500,7 +4500,7 @@
     justify-content: flex-end;
     gap: 0.75rem;
     padding: 1rem 1.5rem;
-    background-color: oklch(100% 0 0);
+    background-color: var(--surface-raised);
     border-top: 1px solid oklch(0% 0 0 / 0.08);
     flex-shrink: 0;
   }
@@ -4523,11 +4523,6 @@
 
   [fa-theme="dark"] .drawer.opened {
     background-color: oklch(0% 0 0 / 0.65);
-  }
-
-  [fa-theme="dark"] .drawer .drawer-panel {
-    background-color: oklch(18% 0 0);
-    color: oklch(90% 0 0);
   }
 
   [fa-theme="dark"] .drawer.has-no-backdrop .drawer-panel {
@@ -4554,11 +4549,6 @@
     border-bottom-color: oklch(100% 0 0 / 0.08);
   }
 
-  [fa-theme="dark"] .drawer-footer {
-    background-color: oklch(18% 0 0);
-    border-top-color: oklch(100% 0 0 / 0.08);
-  }
-
   /* #Navbar */
   .navbar {
     display: flex;
@@ -4567,8 +4557,8 @@
     flex-wrap: nowrap;
     min-height: var(--navbar-height);
     padding: var(--navbar-padding-y) var(--navbar-padding-x);
-    background-color: var(--navbar, oklch(100% 0 0));
-    color: var(--navbar-text, oklch(20% 0 0));
+    background-color: var(--navbar, transparent);
+    color: var(--navbar-text, var(--body-text));
     position: relative;
     width: 100%;
     gap: 1rem;
@@ -4605,7 +4595,7 @@
   }
 
   .navbar-brand {
-    color: var(--body-text);
+     color: inherit;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -4752,11 +4742,6 @@
 
   .navbar.is-large .navbar-brand {
     font-size: 1.5rem;
-  }
-
-  [fa-theme="dark"] .navbar {
-    background-color: var(--navbar, oklch(18% 0 0));
-    color: var(--navbar-text, oklch(90% 0 0));
   }
 
   /* #Dropdown */
@@ -11928,9 +11913,9 @@
     margin-bottom: 1rem;
     padding: 0.75rem 1rem;
     border-radius: 0.25rem;
-    background-color: oklch(100% 0 0);
-    border: 1px solid oklch(0% 0 0 / 0.15);
-    color: oklch(20% 0 0);
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--body-text);
     word-break: normal;
     font-family: inherit;
     font-weight: 400;
@@ -11941,24 +11926,13 @@
     display: block;
     font-size: 0.87em;
     font-weight: 300;
-    color: oklch(20% 0 0 / 0.5);
+    color: color-mix(in oklch, var(--body-text) 50%, transparent);
     margin-top: 1rem;
     margin-bottom: 0.525rem;
   }
 
   .blockquote-footer::before {
     content: "\2014 \00A0";
-  }
-
-  [fa-theme="dark"] blockquote.is-boxed,
-  [fa-theme="dark"] .blockquote {
-    background-color: oklch(18% 0 0);
-    border-color: oklch(100% 0 0 / 0.12);
-    color: oklch(90% 0 0);
-  }
-
-  [fa-theme="dark"] .blockquote-footer {
-    color: oklch(90% 0 0 / 0.45);
   }
 
   /* #Shadow */

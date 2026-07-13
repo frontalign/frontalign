@@ -1,15 +1,10 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
 
-/**
- * Dynamic alert component with:
- * dismiss actions, transitions,
- * icon support and auto cleanup.
- */
 import DomUtils from "../utils/DomUtils.js";
 import Debug from "../core/Debug.js";
 
@@ -46,12 +41,12 @@ export default class Alert {
    */
   static create(selector, options = {}) {
     const instance = new Alert(selector, options);
-      if (!instance.#selectorElement) {
-        Debug.warn(
-          `[Alert] Target element "${selector}" was not found. Instance was not created.`,
-        );
-        return null;
-      }
+    if (!instance.#selectorElement) {
+      Debug.warn(
+        `[Alert] Target element "${selector}" was not found. Instance was not created.`,
+      );
+      return null;
+    }
     instance.build();
     return instance;
   }

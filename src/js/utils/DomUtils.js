@@ -1,14 +1,10 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
 
-/**
- * FrontAlign DOM utility helpers.
- * Shared animation and interaction helpers used by framework components.
- */
 export default class DomUtils {
   /**
    * Hides an element using display:none.

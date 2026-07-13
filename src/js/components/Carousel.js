@@ -1,15 +1,10 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
 
-/**
- * Advanced carousel component with:
- * autoplay, swipe gestures, pager,
- * thumbnails and loop support.
- */
 import Debug from "../core/Debug.js";
 
 export default class Carousel {

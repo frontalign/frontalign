@@ -1,14 +1,8 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
- */
-
-/**
- * Toast notification system with:
- * auto dismiss, progress timers,
- * status variants and queue cleanup.
  */
 
 import DomUtils from "../utils/DomUtils.js";

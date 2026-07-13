@@ -1,19 +1,8 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
- */
-
-/**
- * FrontAlign React Adapter
- * Native React hooks for FrontAlign components.
- *
- * Usage:
- *   import { useNavbar, useTabview, useModal } from 'frontalign/react';
- *
- * No FAProvider needed. No new FrontAlign() needed.
- * Each hook is independent and tree-shakeable.
  */
 
 // Delegate hooks — attach event listeners to document

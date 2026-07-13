@@ -1,15 +1,10 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
 
-/**
- * Advanced modal system with:
- * queue support, confirm dialogs,
- * custom modals and lifecycle callbacks.
- */
 import DomUtils from "../utils/DomUtils.js";
 import ScrollBarHelper from "../utils/ScrollBarHelper.js";
 
@@ -319,7 +314,6 @@ export default class Modal {
   #addIcon() {
     const { icon } = this.#config;
     if (!icon.visible || icon.type === "none") return;
-
 
     const iconHTML = {
       success: `

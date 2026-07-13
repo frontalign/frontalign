@@ -1,15 +1,10 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
 
-/**
- * Advanced custom select component with:
- * search, multi-select, tags,
- * icons and dynamic option rendering.
- */
 import Debug from "../core/Debug";
 
 export default class Select {
@@ -51,7 +46,8 @@ export default class Select {
     //SSR Guard
     if (typeof window === "undefined" || typeof document === "undefined")
       return;
-    this.#el = selector instanceof Element ? selector : document.querySelector(selector);
+    this.#el =
+      selector instanceof Element ? selector : document.querySelector(selector);
 
     if (!(this.#el instanceof Element)) {
       Debug.warn(`[ComponentName] Target element was not found.`);

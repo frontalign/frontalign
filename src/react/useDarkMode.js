@@ -1,39 +1,13 @@
-import { useEffect, useRef, useCallback } from "react";
-import DarkMode from "../js/components/DarkMode.js";
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
-/**
- * useDarkMode
- * Initializes DarkMode instance with full React integration.
- * Supports auto-created toggle button, custom button, and onChange callback.
- *
- * @param {Object}   [options]
- * @param {string}   [options.container]      — Toggle button mount target (default: 'body')
- * @param {string}   [options.customBtn]      — Custom button selector (default: false)
- * @param {boolean}  [options.autoCreateBtn]  — Auto-create toggle button (default: true)
- * @param {Function} [options.onChange]       — Callback when theme changes: (isDark: boolean) => void
- *
- * @returns {{ isDark }}
- *   isDark() — returns current dark mode state
- *
- * @example — auto button (fixed corner)
- * useDarkMode();
- *
- * @example — custom button via selector
- * const { isDark } = useDarkMode({
- *     autoCreateBtn: false,
- *     customBtn: '#my-toggle',
- *     onChange: (dark) => console.log(dark ? 'Dark' : 'Light')
- * });
- *
- * @example — onChange ilə React state sync
- * const [dark, setDark] = useState(false);
- * useDarkMode({ autoCreateBtn: false, customBtn: '#my-toggle', onChange: setDark });
- */
+
+import { useEffect, useRef, useCallback } from "react";
+import DarkMode from "../js/components/DarkMode.js";
+
 export function useDarkMode(options = {}) {
   const instanceRef = useRef(null);
 

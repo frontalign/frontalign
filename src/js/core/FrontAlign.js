@@ -1,9 +1,10 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
+
 import Debug from "./Debug.js";
 import Components from "./Component.js";
 import { faConfig } from "./Config.js";
@@ -20,11 +21,6 @@ import Popover from "../components/Popover.js";
 import Form from "../components/Form.js";
 import Range from "../components/Range.js";
 
-/**
- * Main FrontAlign framework runtime.
- * Handles component initialization,
- * lazy loading, observers and plugins.
- */
 export default class FrontAlign {
   /**
    * Initializes the framework runtime
@@ -36,7 +32,7 @@ export default class FrontAlign {
       return;
     }
     // Debug Mode
-    if (config.debug) Debug.enable(); 
+    if (config.debug) Debug.enable();
 
     this.Registry = {
       delegate: {

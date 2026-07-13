@@ -1,10 +1,11 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
-import Toast from './Toast.js';
+
+import Toast from "./Toast.js";
 
 export default class Form {
   static #rules = {
@@ -154,8 +155,8 @@ export default class Form {
 
     const runDataRules = (field) => {
       const raw = field.getAttribute("data-rule");
-            if (!raw) return null;
-            if (!field.value && field.type !== "file") return null;
+      if (!raw) return null;
+      if (!field.value && field.type !== "file") return null;
 
       for (const token of raw.trim().split(/\s+/)) {
         const colonIdx = token.indexOf(":");
@@ -168,7 +169,7 @@ export default class Form {
           continue;
         }
 
-         const result = rule(field.value, param, field);
+        const result = rule(field.value, param, field);
         if (result !== true) return String(result); // first failure wins
       }
 
@@ -183,21 +184,23 @@ export default class Form {
       "image",
     ]);
 
-const getOrGenerateFeedbackEl = (field) => {
-  if (SKIP_TYPES.has(field.type)) return null;
+    const getOrGenerateFeedbackEl = (field) => {
+      if (SKIP_TYPES.has(field.type)) return null;
 
-  if (field.hasAttribute("data-no-feedback")) return null;
-  const atom = field.closest(".group-checkbox, .group-radio, .group-switch");
-  const parent = atom?.closest(".group") || atom || field.parentNode;
+      if (field.hasAttribute("data-no-feedback")) return null;
+      const atom = field.closest(
+        ".group-checkbox, .group-radio, .group-switch",
+      );
+      const parent = atom?.closest(".group") || atom || field.parentNode;
 
-  let el = parent.querySelector(":scope > .form-feedback.is-invalid");
-  if (!el) {
-    el = document.createElement("div");
-    el.className = "form-feedback is-invalid";
-    parent.appendChild(el);
-  }
-  return el;
-};
+      let el = parent.querySelector(":scope > .form-feedback.is-invalid");
+      if (!el) {
+        el = document.createElement("div");
+        el.className = "form-feedback is-invalid";
+        parent.appendChild(el);
+      }
+      return el;
+    };
 
     const clearServerFeedback = (form) => {
       form.querySelectorAll(".form-feedback.from-server").forEach((el) => {
@@ -453,30 +456,30 @@ const getOrGenerateFeedbackEl = (field) => {
       }
     };
 
-const changeHandler = (evt) => {
-  const input = evt.target;
-  if (!input.matches(config.inputFile)) return;
+    const changeHandler = (evt) => {
+      const input = evt.target;
+      if (!input.matches(config.inputFile)) return;
 
-  const group = input.closest(config.groupFile);
-  if (!group) return;
+      const group = input.closest(config.groupFile);
+      if (!group) return;
 
-  const display = group.querySelector(config.uploadDisplay);
+      const display = group.querySelector(config.uploadDisplay);
 
-  if (display) {
-    if (input.files.length === 0) {
-      display.textContent =
-        group.getAttribute("data-default-text") || "No file selected";
-    } else if (input.files.length === 1) {
-      display.textContent = `Selected: ${input.files[0].name.replace(/[<>/\\|:*?"']/g, "_")}`;
-    } else {
-      display.textContent = `${input.files.length} items selected`;
-    }
-  }
+      if (display) {
+        if (input.files.length === 0) {
+          display.textContent =
+            group.getAttribute("data-default-text") || "No file selected";
+        } else if (input.files.length === 1) {
+          display.textContent = `Selected: ${input.files[0].name.replace(/[<>/\\|:*?"']/g, "_")}`;
+        } else {
+          display.textContent = `${input.files.length} items selected`;
+        }
+      }
 
-  // Seçilən kimi yoxlanışı işə salır
-  touchedFields.add(input);
-  validateField(input);
-};
+      // Seçilən kimi yoxlanışı işə salır
+      touchedFields.add(input);
+      validateField(input);
+    };
 
     // Init visuals
     const initVisuals = () => {

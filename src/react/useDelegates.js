@@ -1,12 +1,14 @@
-import { useEffect } from "react";
-import Components from "../js/core/Component.js";
-import Form from "../js/components/Form.js";
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
+
+import { useEffect } from "react";
+import Components from "../js/core/Component.js";
+import Form from "../js/components/Form.js";
+
 /**
  * useNavbar
  * Initializes responsive navbar toggle interactions.

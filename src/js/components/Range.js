@@ -1,9 +1,10 @@
 /*!
- * FrontAlign v1.0.2
+ * FrontAlign v1.0.3
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
  */
+
 import Debug from "../core/Debug";
 
 const instances = new WeakMap();
@@ -287,7 +288,7 @@ class Range {
     return String(value);
   }
 
-  // Public API 
+  // Public API
 
   getValue() {
     return this.#isDual

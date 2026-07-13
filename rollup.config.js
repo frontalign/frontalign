@@ -16,6 +16,26 @@ const cdnBreakpointsPlugin = () => {
 };
 cdnBreakpointsPlugin.postcss = true;
 
+const bannerText = `/*! 
+ * FrontAlign v1.0.3
+ * (c) Eyruz Badalzada
+ * Released under the MIT License
+ * https://www.frontalign.dev
+ */`;
+
+ const stripCssCommentsPlugin = () => {
+   return {
+     postcssPlugin: "strip-css-comments",
+     OnceExit(root) {
+       root.walkComments((comment) => {
+         comment.remove();
+       });
+       root.prepend(bannerText);
+     },
+   };
+ };
+ stripCssCommentsPlugin.postcss = true;
+
 export default [
   // ─────────────────────────────────────────
   // ESM — Bundler (Vite, Webpack, Rollup)
@@ -27,6 +47,17 @@ export default [
       format: "es",
       sourcemap: true,
     },
+    plugins: [
+      terser({
+        compress: false,
+        mangle: false,
+        format: {
+          beautify: true,
+          comments: false,
+          preamble: bannerText,
+        },
+      }),
+    ],
   },
 
   // ─────────────────────────────────────────
@@ -40,6 +71,17 @@ export default [
       format: "es",
       sourcemap: true,
     },
+    plugins: [
+      terser({
+        compress: false,
+        mangle: false,
+        format: {
+          beautify: true,
+          comments: false,
+          preamble: bannerText,
+        },
+      }),
+    ],
   },
 
   // ─────────────────────────────────────────
@@ -53,7 +95,14 @@ export default [
       format: "umd",
       name: "FrontAlign",
       sourcemap: true,
-      plugins: [terser()],
+      plugins: [
+        terser({
+          format: {
+            comments: false,
+            preamble: bannerText,
+          },
+        }),
+      ],
     },
   },
 
@@ -68,6 +117,7 @@ export default [
         extract: "frontalign.css",
         minimize: false,
         plugins: [
+          stripCssCommentsPlugin(),
           postcssPresetEnv({
             stage: false,
           }),
