@@ -1,6 +1,6 @@
 @charset "utf-8";
 /*! 
- * FrontAlign v1.0.3
+ * FrontAlign v1.0.4
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -122,15 +122,15 @@
     --slate-900: oklch(0.31 0.014 250);
  
     /* Semantic color tokens */
-    --primary: var(--blue-600);
+    --primary: var(--blue-700);
     --primary-contrast: var(--white);
-    --danger: var(--red-500);
+    --danger: var(--red-600);
     --danger-contrast: var(--white);
-    --success: var(--green-500);
+    --success: var(--green-700);
     --success-contrast: var(--white);
     --warning: var(--yellow-400);
     --warning-contrast: var(--dark);
-    --info: var(--teal-600);
+    --info: var(--teal-700);
     --info-contrast: var(--white);
     --muted: var(--slate-500);
     --white: oklch(1 0 0);

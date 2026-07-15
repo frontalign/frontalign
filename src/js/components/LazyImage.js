@@ -1,5 +1,5 @@
 /*!
- * FrontAlign v1.0.3
+ * FrontAlign v1.0.4
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -53,6 +53,8 @@ export default class LazyImage {
    * IntersectionObserver and MutationObserver.
    */
   static observe(selector = "img[data-src]") {
+    if (typeof window === "undefined" || typeof document === "undefined")
+      return;
     const intersectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

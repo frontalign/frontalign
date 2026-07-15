@@ -1,5 +1,5 @@
 /*!
- * FrontAlign v1.0.3
+ * FrontAlign v1.0.4
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -25,6 +25,7 @@ class Range {
   #resizeObserver;
 
   constructor(element, options = {}) {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
     if (instances.has(element)) {
       return instances.get(element);
     }
@@ -89,6 +90,7 @@ class Range {
   }
 
   static init(root = document) {
+  if (typeof window === "undefined" || typeof document === "undefined") return;
     root
       .querySelectorAll(Range.SELECTOR)
       .forEach((el) => Range.getOrCreateInstance(el));

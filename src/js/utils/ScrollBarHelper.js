@@ -1,5 +1,5 @@
 /*!
- * FrontAlign v1.0.3
+ * FrontAlign v1.0.4
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -11,8 +11,7 @@ const SELECTOR_STICKY = "[data-sticky-lock]";
 export default class ScrollBarHelper {
   constructor() {
     //SSR Guard
-    if (typeof window === "undefined" || typeof document === "undefined")
-      return;
+    if (typeof window === "undefined" || typeof document === "undefined") return;
     this._body = document.body;
     this._html = document.documentElement;
   }
@@ -46,8 +45,6 @@ export default class ScrollBarHelper {
       "--fa-scrollbar-width",
       `${width}px`,
     );
-
-    // --- READ PHASE ---
     // Gather every value we need up front instead of interleaving reads
     // (getComputedStyle) with writes (style.setProperty). Interleaving
     // forces a synchronous layout recalculation on every element, which
@@ -69,7 +66,6 @@ export default class ScrollBarHelper {
       (el) => parseFloat(getComputedStyle(el).marginRight) || 0,
     );
 
-    // --- WRITE PHASE ---
     this._setInline(this._body, "overflow", "hidden");
 
     if (width) {

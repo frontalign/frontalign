@@ -1,5 +1,5 @@
 /*!
- * FrontAlign v1.0.3
+ * FrontAlign v1.0.4
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -91,6 +91,10 @@ export default class Modal {
    * Custom alert modal.
    */
   static custom(options = {}) {
+    // SSR Guard
+    if (typeof window === "undefined" || typeof document === "undefined") {
+      return Promise.resolve();
+    }
     return Modal.#open("custom", options);
   }
 

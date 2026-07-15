@@ -1,5 +1,5 @@
 /*!
- * FrontAlign v1.0.3
+ * FrontAlign v1.0.4
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -527,6 +527,21 @@ export default class Components {
       }
     };
 
+    const isNavigationalLink = (link) => {
+      if (!link) return false;
+      // Elements with the fa-toggle attribute (dropdown, accordion, etc.)
+      // are not navigation — they're UI controls, so the drawer shouldn't close
+      if (link.hasAttribute("fa-toggle") || link.closest("[fa-toggle]")) {
+        return false;
+      }
+      const href = link.getAttribute("href");
+      if (href === null) return false; // no href -> per spec, not a hyperlink
+      const trimmed = href.trim();
+      if (trimmed === "" || trimmed === "#") return false;
+      if (trimmed.toLowerCase().startsWith("javascript:")) return false;
+      return true;
+    };
+
     const openDrawer = (drawer) => {
       if (drawerLock || drawer.classList.contains(_config.openClass)) return;
 
@@ -632,6 +647,13 @@ export default class Components {
         if (drawer) closeDrawer(drawer);
         return;
       }
+      
+      if (activeDrawer) {
+        const link = evt.target.closest("a");
+        if (link && activeDrawer.contains(link) && isNavigationalLink(link)) {
+          closeDrawer(activeDrawer);
+        }
+      }
 
       if (activeDrawer && activeDrawer.classList.contains(_config.openClass)) {
         const panel = activeDrawer.querySelector(_config.panel);
@@ -661,7 +683,11 @@ export default class Components {
       unlockBodyScroll();
     };
   }
-
+  /**
+   * Initializes nav tab interactions with
+   * active state management and ARIA support.
+   * Returns a cleanup disposer function.
+   */
   static tabview(tabContainer) {
     if (!tabContainer) return;
 

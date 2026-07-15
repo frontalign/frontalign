@@ -1,5 +1,5 @@
 /*!
- * FrontAlign v1.0.3
+ * FrontAlign v1.0.4
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -53,7 +53,6 @@ export default class DomUtils {
 
       animation.onfinish = () => {
         animation.cancel();
-        // Inline stilləri təmizlə
         el.style.height = el.style.overflow = "";
         el.style.marginTop = el.style.marginBottom = "";
         el.style.display = "none";
@@ -119,6 +118,8 @@ export default class DomUtils {
    * Returns a cleanup disposer function.
    */
   static closeOnEscape(el, toggler, duration = 350) {
+  if (typeof window === "undefined" || typeof document === "undefined")
+    return () => {}; 
     if (el._escapeHandler) {
       document.removeEventListener("keydown", el._escapeHandler);
     }

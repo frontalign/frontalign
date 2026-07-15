@@ -1,5 +1,5 @@
 /*!
- * FrontAlign v1.0.3
+ * FrontAlign v1.0.4
  * (c) Eyruz Badalzada
  * Released under the MIT License
  * https://www.frontalign.dev
@@ -29,7 +29,7 @@ export function faConfig(config = {}) {
   if (typeof document === "undefined") return;
 
   // NPM Guard
-  if (document.querySelector('link[href*="fa.build.css"]')) {
+  if (document.querySelector('link[href*="frontalign.build.css"]')) {
     return;
   }
 
