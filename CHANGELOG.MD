@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.5] - 2026-07-16
+
+### Fixed
+- **Semantic Contrast Optimization:** Adjusted contrast values for all semantic colors (`--primary-contrast`, `--danger-contrast`, etc.) in both Light and Dark modes to fully comply with modern UI readability (WCAG) standards.
+  - *Light Mode:* Text on darker background tones (600) has been updated to a crisp off-white (`oklch(0.985 0 0)`) for a cleaner and sharper appearance (excluding the warning color).
+  - *Dark Mode:* Fixed readability and "halation" (glowing) issues caused by white text on bright, vibrant backgrounds (500). All contrast texts are now set to a dark tone (`oklch(0.145 0 0)`) to ensure sharp legibility.
+
+### Changed
+- **Core Color Palette Refinement:** Optimized the OKLCH values for `Success` (Green), `Red`, and `Orange` base tokens to deliver a more vibrant, modern, and premium interface feel.
+
 ## [1.0.4] - 2026-07-15
 ### Fixed
 - **SSR:** Fixed runtime errors when used in SSR (server-side rendering) environments where `document`/`window` are unavailable — `LazyImage.observe()`, `Range` (`constructor`, `static init()`), `Modal` (`custom`), and `DomUtils.closeOnEscape()` now safely no-op (returning immediately, an already-resolved promise, or a no-op cleanup function) instead of throwing.
