@@ -1,6 +1,6 @@
 {
   "name": "frontalign",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Modern front-end framework. Lightweight, powerful, no chaos.",
   "author": "Eyruz Badalzada",
   "license": "MIT",
@@ -13,9 +13,16 @@
     "frontalign": "bin/fa-cli.js"
   },
   "keywords": [
+    "css",
     "css-framework",
+    "utility-css",
+    "ui",
     "ui-components",
+    "ui-library",
+    "frontend",
     "frontend-framework",
+    "components",
+    "responsive",
     "bootstrap-alternative",
     "tailwind-alternative"
   ],

@@ -136,14 +136,14 @@ No manual re-initialization required.
 
 FrontAlign ships with a built-in CSS compiler and JIT Engine for production builds.
 
-It scans your project, detects the classes you actually use, applies your `fa.config.js` configuration, removes unused framework CSS and writes the optimized result into a single production stylesheet.
+It scans your project, detects the classes you actually use, applies your `frontalign.config.js` configuration, removes unused framework CSS and writes the optimized result into a single production stylesheet.
 
 ```bash
 npx frontalign build
 ```
 
 ```js
-// fa.config.js
+// frontalign.config.js
 
 export default {
     theme: {
@@ -157,16 +157,13 @@ export default {
         }
     ],
 
-    scan: [
-        './app',
-        './components',
-        './pages',
-        './src'
-    ],
-
-    safelist: [
-        'dark-mode'
-    ]
+  jit: {
+    scan: ['./app', './components', './pages'],
+    safelist: ['button', 'is-primary', 'is-active'],
+    extensions: ['mdx'],
+    debug: false,
+    concurrency: 50
+  },
 };
 ```
 
@@ -198,10 +195,10 @@ FrontAlign uses a modern breakpoint scale out of the box, tuned for today's scre
 }
 ```
 
-These breakpoints power all responsive utilities (`sm:`, `md:`, `lg:`, `xl:`, `2xl:`) and can be fully customized through `fa.config.js`. The JIT compiler picks up your overrides at build time and regenerates the responsive utility set accordingly.
+These breakpoints power all responsive utilities (`sm:`, `md:`, `lg:`, `xl:`, `2xl:`) and can be fully customized through `frontalign.config.js`. The JIT compiler picks up your overrides at build time and regenerates the responsive utility set accordingly.
 
 ```js
-// fa.config.js
+// frontalign.config.js
 
 export default {
     theme: {
@@ -234,7 +231,7 @@ new FrontAlign({
 
 This is for is for runtime configuration.
 
-`fa.config.js` is for build-time CSS compilation.
+`frontalign.config.js` is for build-time CSS compilation.
 
 ---
 
@@ -403,6 +400,16 @@ FrontAlign targets modern browsers supporting:
 ## License
 
 MIT © Eyruz Badalzada
+
+## Support Us
+
+If FrontAlign helps you build better products, consider supporting the project.
+
+Your donation helps fund ongoing development, bug fixes, documentation improvements, new components, and future releases. Every contribution—large or small—helps keep FrontAlign open, modern, and actively maintained.
+
+[![Support](https://img.shields.io/badge/Support-FrontAlign-ff5f45?style=for-the-badge&logo=githubsponsors&logoColor=white)](https://buy.polar.sh/polar_cl_orrrWWpn119Wi5sWoH4SX04V7bptSiNuZPCYY0DC5As)
+
+Thank you for supporting FrontAlign and helping grow the ecosystem.
 
 ## Troubleshooting
 
